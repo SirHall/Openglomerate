@@ -1,32 +1,33 @@
 #include <iostream>
 #include <ncurses.h>
 #include "SDL2/SDL.h"
-
 #include "Game.hpp"
+#include "Clock.hpp"
 
 using namespace std;
-// using namespace Openglomerate;
 
 Game *game = NULL;
+Clock *gameClock = NULL;
 
 int main() {
 
-    initscr();
-    raw();
-    noecho();
-    keypad(stdscr, TRUE);
+    // initscr();
+    // raw();
+    // noecho();
+    // keypad(stdscr, TRUE);
 
-    // game = new Game();
-    // game->Init(SDL_INIT_AUDIO | SDL_INIT_EVENTS | SDL_INIT_TIMER);
+    game = new Game();
+    gameClock = new Clock();
 
-    // //Game loop!
-    // while(game->IsRunning()){
-    //     game->Update();
-    //     game->Render();
-    // }
+    game->Init(SDL_INIT_AUDIO | SDL_INIT_EVENTS | SDL_INIT_TIMER);
 
-    // game->Clean();
-    endwin();
+    gameClock->SetTPS(30);
+    gameClock->StartLoop();
+
+    cout << "Program ended\n";
+
+    game->Clean();
+    // endwin();
     cout << "Program ran\n";    
     return 0;
 }

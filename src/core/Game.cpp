@@ -1,5 +1,4 @@
 #include "Game.hpp"
-
 // using namespace Openglomerate;
 
 // namespace Openglomerate{
@@ -10,14 +9,13 @@
 
 	void Game::Init(unsigned int SDLInitParameters)
 	{
+		this->cTick++; //Assuming 30fps, this should take 4.5 years to overflow
+		this->isRunning = SDL_Init(SDLInitParameters) == 0;
+		std::cout << (
+			this->isRunning ? 
+			"SDL initialized successfully\n" : 
+			"SDL failed to initialize\n");
 
-		if (SDL_Init(SDLInitParameters) == 0)
-		{
-			std::cout << "SDL initialization complete!\n";
-			this->isRunning = true;
-		}else{
-			this->isRunning = false;
-		}
 	}
 
 	void Game::HandleEvents() {}
@@ -27,7 +25,7 @@
 	void Game::Render() {}
 
 	void Game::Clean() {
-		// SDL_Quit();
+		SDL_Quit();
 		this->isRunning = false;
 	}
-// }
+//}

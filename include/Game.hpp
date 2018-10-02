@@ -18,9 +18,10 @@ class Game {
         void Clean();
 
         bool IsRunning(){return isRunning;}
-
+        unsigned long GetCurrentTick(){return cTick;}
         private:
             bool isRunning = false;
+            unsigned long cTick = 0;
     };
 // }
 
