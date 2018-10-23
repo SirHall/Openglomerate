@@ -11,11 +11,6 @@ Clock *gameClock = NULL;
 
 int main() {
 
-    // initscr();
-    // raw();
-    // noecho();
-    // keypad(stdscr, TRUE);
-
     game = new Game();
     gameClock = new Clock();
 

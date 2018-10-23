@@ -26,54 +26,25 @@ using namespace std::chrono;
             double GetScaledDeltaTime(){return this->scaledDeltaTime;}
             double GetUnscaledDeltaTime(){return this->unscaledDeltaTime;}
 
-            void StartLoop(){
-                running = true;
-                start = high_resolution_clock::now();
-                last = start;
+            void StartLoop();
 
-                Loop();
-            }
-
-            void EndLoop(){
-                running = false;
-            }
+            void EndLoop();
 
         private:
-            void Loop(){
-                while(running){
-                    double dt = MicroS_DeltaTime(
-                        high_resolution_clock::now(), last);
-                    if(dt >= microsecondsPerTick){
-                        //Run frame
-                        last = high_resolution_clock::now();
-                        unscaledDeltaTime = dt / (1.0e6);
-                        scaledDeltaTime = unscaledDeltaTime * timeScale;
-                        CallUpdates();
-                    }else{
-                        //Do other stuff while we wait
-                        CallSleep();
-                    }
-                }
-            }
+            void Loop();
 
-            void CallUpdates(){
-
-            }
-
-            void CallSleep(){
-
-            }
+            void CallUpdates();
+            
+            void CallSleep();
 
             long MicroS_DeltaTime(
                 time_point<high_resolution_clock> a, 
-                time_point<high_resolution_clock> b){
-                return duration_cast<microseconds>(a - b).count();
-            }
+                time_point<high_resolution_clock> b);
 
             time_point<high_resolution_clock> start;
             time_point<high_resolution_clock> last;
             bool running = false;
-            unsigned long microsecondsPerTick = 33333.0; //For 30tps
+            unsigned long microsecondsPerTick = 33333.0; //Default for 30tps
             double scaledDeltaTime = 0.0;
             double unscaledDeltaTime = 0.0;
             double timeScale = 1.0;

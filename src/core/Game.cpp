@@ -13,9 +13,8 @@
 		this->isRunning = SDL_Init(SDLInitParameters) == 0;
 		std::cout << (
 			this->isRunning ? 
-			"SDL initialized successfully\n" : 
-			"SDL failed to initialize\n");
-
+				"SDL initialized successfully\n" : 
+				"SDL failed to initialize\n");
 	}
 
 	void Game::HandleEvents() {}
