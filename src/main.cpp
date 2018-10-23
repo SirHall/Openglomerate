@@ -3,6 +3,7 @@
 //#include "SDL2/SDL.h"
 #include "Game.hpp"
 #include "Clock.hpp"
+#include "ncurseEZ.h"
 
 using namespace std;
 
@@ -10,12 +11,9 @@ Game *game = NULL;
 Clock *gameClock = NULL;
 
 int main() {
-
-    // initscr();
-    // raw();
-    // noecho();
-    // keypad(stdscr, TRUE);
-
+    
+    StartNCurses();
+    
     game = new Game();
     gameClock = new Clock();
 
@@ -27,7 +25,7 @@ int main() {
     cout << "Program ended\n";
 
     game->Clean();
-    // endwin();
+    StopNCurses();
     cout << "Program ran\n";    
     return 0;
 }
