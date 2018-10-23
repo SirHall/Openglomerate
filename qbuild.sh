@@ -2,7 +2,7 @@
 #Who even uses makefiles anyway? :D
 objOut="./object/"
 exec="./bin/out"
-libraries="-lncurses -lSDL"
+libraries="-lncurses"
 libs=""
 flags="-Wall"
 include="-I./include/ -I/usr/include -I/usr/local/include -I./**"

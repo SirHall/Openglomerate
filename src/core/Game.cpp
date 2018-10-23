@@ -10,11 +10,11 @@
 	void Game::Init(unsigned int SDLInitParameters)
 	{
 		this->cTick++; //Assuming 30fps, this should take 4.5 years to overflow
-		this->isRunning = SDL_Init(SDLInitParameters) == 0;
-		std::cout << (
-			this->isRunning ? 
-			"SDL initialized successfully\n" : 
-			"SDL failed to initialize\n");
+		//this->isRunning = SDL_Init(SDLInitParameters) == 0;
+		//std::cout << (
+		//	this->isRunning ? 
+		//	"SDL initialized successfully\n" : 
+		//	"SDL failed to initialize\n");
 
 	}
 
@@ -25,7 +25,7 @@
 	void Game::Render() {}
 
 	void Game::Clean() {
-		SDL_Quit();
+		//SDL_Quit();
 		this->isRunning = false;
 	}
 //}

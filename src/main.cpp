@@ -1,6 +1,6 @@
 #include <iostream>
 #include <ncurses.h>
-#include "SDL2/SDL.h"
+//#include "SDL2/SDL.h"
 #include "Game.hpp"
 #include "Clock.hpp"
 
@@ -19,7 +19,7 @@ int main() {
     game = new Game();
     gameClock = new Clock();
 
-    game->Init(SDL_INIT_AUDIO | SDL_INIT_EVENTS | SDL_INIT_TIMER);
+    //game->Init(SDL_INIT_AUDIO | SDL_INIT_EVENTS | SDL_INIT_TIMER);
 
     gameClock->SetTPS(30);
     gameClock->StartLoop();
