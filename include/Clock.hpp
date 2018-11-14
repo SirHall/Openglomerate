@@ -16,7 +16,7 @@ using namespace std::chrono;
 
             void SetTPS(double tps){
                 this->microsecondsPerTick = (1.0 / tps) * 1.0e6;
-                std::cout << "Set Mspt to: " << this->microsecondsPerTick << "\n";
+                //std::cout << "Set Mspt to: " << this->microsecondsPerTick << "\n";
             }
             double GetTPS(){return 1.0 / (this->microsecondsPerTick / 1.0e6);}
 
