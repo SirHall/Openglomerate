@@ -7,22 +7,22 @@
 // namespace Openglomerate{
 
 class Game {
-    public:
-        Game();
-        ~Game();
+	public:
+		Game();
+		~Game();
 
-        void Init(unsigned int SDLInitParameters);
-        void HandleEvents();
-        void Update();
-        void Render();
-        void Clean();
+		void Init();
+		void HandleEvents();
+		void Update();
+		void Render();
+		void Clean();
 
-        bool IsRunning(){return isRunning;}
-        unsigned long GetCurrentTick(){return cTick;}
-        private:
-            bool isRunning = false;
-            unsigned long cTick = 0;
-    };
+		bool IsRunning(){return isRunning;}
+		unsigned long GetCurrentTick(){return cTick;}
+		private:
+			bool isRunning = false;
+			unsigned long cTick = 0;
+	};
 // }
 
 #endif //Game.hpp

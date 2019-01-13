@@ -1,5 +1,6 @@
 #include "Display.hpp"
 // #include ""
+#include <ncurses.h>
 
 Display::Display() {
     initscr();
