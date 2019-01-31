@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ncurses.h>
-#include "Game.hpp"
-#include "Clock.hpp"
+#include "game.hpp"
+#include "clock.hpp"
 #include "ncurseEZ.h"
 
 using namespace std;

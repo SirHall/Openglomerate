@@ -1,4 +1,4 @@
-#include "Game.hpp"
+#include "game.hpp"
 // using namespace Openglomerate;
 
 // namespace Openglomerate{

@@ -10,8 +10,8 @@ CPPVersion="c++17"
 
 #Find uncompiled files (.cpp .c)
 raws=$(find ./src/ -name "*.cpp"; find ./src/ -name "*.c")
-for i in $raws
-    do echo $i
-done
+# for i in $raws
+#     do echo $i
+# done
 
 g++ $flags -o $exec $raws $libs $libraries $include -std=$CPPVersion

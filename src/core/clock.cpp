@@ -1,4 +1,4 @@
-#include "Clock.hpp"
+#include "clock.hpp"
 
 void Clock::Loop(){
 	while(running){
